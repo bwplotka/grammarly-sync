@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Grammarly Sync",
+  "author": "Bartek Plotka <https://bwplotka.dev>",
+  "content_scripts": [
+    {
+      "matches": ["https://app.grammarly.com/*"],
+      "all_frames": true,
+      "js":      ["content.bundle.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "sync.png",
+      "128": "sync.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "clipboardWrite",
+    "https://app.grammarly.com/*"
+  ],
+  "host_permissions": [
+    "https://app.grammarly.com/*",
+    "*://*/*"
+  ],
+  "icons": {
+    "48": "sync.png",
+    "128": "sync.png"
+  },
+  "content_security_policy": {}
+}
